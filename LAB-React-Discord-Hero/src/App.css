@@ -1,42 +1,135 @@
-#root {
-  max-width: 1280px;
+
+:root{
+  --discord-blue: #404EED;
+  --text: #ffffff;
+  --btn-dark: #23272A;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  background: var(--discord-blue);
+  color: var(--text);
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Common container like the Discord page */
+.container{
+  width: min(1120px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* ===== Header ===== */
+.site-header{
+  padding: 22px 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  height: 34px;
+  width: auto;
+}
+
+.menu-btn{
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.menu-icon{
+  width: 30px;
+  height: 30px;
+}
+
+/* ===== Hero ===== */
+.hero{
+  padding: 44px 0 30px;
+}
+
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Left side */
+.hero-title{
+  margin: 0 0 18px;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: 1px;
+  font-size: clamp(48px, 5.2vw, 78px);
+}
+
+.hero-text{
+  margin: 0 0 28px;
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.hero-actions{
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn{
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.06s ease;
+}
+
+.btn:active{
+  transform: translateY(1px);
+}
+
+.btn-light{
+  background: #ffffff;
+  color: #111;
+}
+
+.btn-dark{
+  background: var(--btn-dark);
+  color: #fff;
+}
+
+/* Right side illustration */
+.hero-right{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-illustration{
+  width: min(520px, 100%);
+  height: auto;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .hero-grid{
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+  .hero-right{
+    justify-content: center;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
