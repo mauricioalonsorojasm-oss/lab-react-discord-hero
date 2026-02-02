@@ -1,16 +1,18 @@
-import logo from "LAB-React-Discord-Hero/src/assets/discord-logo-white.png";
+import logo from "../assets/discord-logo-white.png";
+import menuIcon from "../assets/menu-icon.png";
 
 function Header () {
         return (
-            <header> 
-                <img src={logo} alt ="logo" />
+            <header className="site-header">
+      <div className="container header-inner">
+        <img className="logo" src={logo} alt="Discord" />
 
-            </header>
-
-
-
-
-        )
+        <button className="menu-btn" aria-label="Open menu">
+          <img className="menu-icon" src={menuIcon} alt="" />
+        </button>
+      </div>
+    </header>
+  );
 
 
 
